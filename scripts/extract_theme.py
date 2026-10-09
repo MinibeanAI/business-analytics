@@ -14,7 +14,7 @@ def extract_colors(image_path, top_n=3):
     try:
         from PIL import Image
     except ImportError:
-        print("安装 Pillow: pip install pillow --break-system-packages", file=sys.stderr)
+        print("缺少 Pillow。请在项目虚拟环境中安装 Pillow，或跳过脚本并手动指定品牌配色。", file=sys.stderr)
         sys.exit(1)
     
     img = Image.open(image_path).convert('RGB').resize((200, 200), Image.LANCZOS)
